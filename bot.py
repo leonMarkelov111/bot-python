@@ -33,11 +33,8 @@ for event in longpoll.listen():
                     reason = msg.split(' ')[2]
                     kick_type = 'С возможностью возвращения'
                     kikuser(id, idd)
-                    if {idd} == {iduser}:
-                        sender(id, f'@id{iduser}(Вы) использовали свой идентификатор')
-                    else:
-                        sender(id, f"@id{idd}(Пользователь) успешно исключён из беседы.\nАдминистратор: @id{iduser}(Администратор)\nДата:  {datetime.datetime.now().strftime(' %d.%m.%Y')}\nВремя:{datetime.datetime.now().strftime(' %H:%M:%S')}\nПричина: {reason}\nТип кика: {kick_type}")
-                        print(iduser, 'use command kick', idd)
+                    sender(id, f"@id{idd}(Пользователь) успешно исключён из беседы.\nАдминистратор: @id{iduser}(Администратор)\nДата:  {datetime.datetime.now().strftime(' %d.%m.%Y')}\nВремя:{datetime.datetime.now().strftime(' %H:%M:%S')}\nПричина: {reason}\nТип кика: {kick_type}")
+                    print(iduser, 'use command kick', idd)
                 except:
                     sender(id, f'@id{iduser}(Администратор), за это тебя могут снять!\n\nВозможные причины появления данного сообщения:\n1. Вы попытались кикнуть человека старше Вас рангом.\n2. Вы не указали причину для кика\n3. Вы гей')
                     print('Администратор с id',iduser, ' Попытка кикнуть одного из членов whitelist')
