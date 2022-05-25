@@ -51,7 +51,7 @@ for event in longpoll.listen():
                                f"@id{idd}(Пользователь) успешно исключён из беседы.\nАдминистратор: @id{iduser}(Администратор)\n"
                                f"Дата:  {datetime.datetime.now().strftime(' %d.%m.%Y')}\nВремя:{datetime.datetime.now().strftime(' %H:%M:%S')}\n"
                                f"Причина: Нет причины\nТип кика: {boba}")
-                        sender(15, f"@id{iduser}(Администратор) кикнкул @id{idd}(Пользователя)\nБеседа выполненной команды: {id}\nПричина: {msg1}\nТип кика:{biba}")
+                        sender(15, f"@id{iduser}(Администратор) кикнкул @id{idd}(Пользователя)\nБеседа выполненной команды: {id}\nПричина: {msg1}\nТип кика:{boba}")
                 except:
                     sender(id, f'@id{iduser}(Администратор), пожалуйста, проверь правильность выполнения команды.\n/kick Пользователь Причина Тип кика\n\nДоступные типы кика: 1 - с возможностью восстановления\n0 - без возможности восстановления')
                     sender(15, f"@id{iduser}(Администратор) с конференции {id} неверно использовал функцию kick")
@@ -91,5 +91,6 @@ for event in longpoll.listen():
                 sender(15, f"@id{iduser}(Администратор) использовал функцию очистки чата.\nИндивидуальный номер конференции: {id}")
             if msg.startswith('/in_all_conference'):
                 sender(18, 'Сообщение от имени разработчика отправлено.')
-                for i in range(15, 18):
-                    sender(i, f'Оповещение от @id{iduser}(разработчика): {msg}'.replace('/in_all_conference', ''))
+                sender(15, f'@id{iduser}(Разработчик) отправил информационное сообщение.')
+                for i in range(16, 19):
+                    sender(i, f'Оповещение от @id{iduser}(разработчика): \n{msg}'.replace('/in_all_conference', ''))
